@@ -1,0 +1,47 @@
+@import url(stajl.css);
+
+.panel{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+
+    position: absolute;
+    min-height: 20vh;
+    min-width: 100vw;
+    bottom: 0;
+    background-color: #EEF2FB;
+    transition: 2s;
+    transform: translateY(20vh);
+    display: none;
+}
+
+.panel-display{
+    display: flex;
+}
+
+.panel-active{
+    transform: translateY(0);
+}
+
+input{
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    height: 18px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: grey;
+}
+
+.panel > button{
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 6px;
+    border: 0;
+    background-color: #4E4E80;
+    color: aliceblue;
+}
