@@ -36,6 +36,7 @@ const addElement = (name)=>{
     }
     else{
         tasks.appendChild(item);
+        localStorage.setItem(name, 'no');
     }
 
     box.addEventListener('click', ()=>{
@@ -44,22 +45,21 @@ const addElement = (name)=>{
             tasks.insertBefore(box.parentElement, null);
             counter.innerHTML = 'COMPLETED (' + (completed.children.length-1) + ')';
 
-            localStorage.setItem(span.innerHTML, 'no');
+            localStorage.setItem(name, 'no');
         }
         else{
             box.classList.add('fullHeart');
             completed.insertBefore(box.parentElement, null);
             counter.innerHTML = 'COMPLETED (' + (completed.children.length-1) + ')';
 
-            localStorage.setItem(span.innerHTML, 'yes');
+            localStorage.setItem(name, 'yes');
         }
     });
 
     remove.addEventListener('click', ()=>{
         item.remove();
-        localStorage.removeItem(span.innerHTML);
+        localStorage.removeItem(name);
         counter.innerHTML = 'COMPLETED (' + (completed.children.length-1) + ')';
     });
     
-    localStorage.setItem(name, 'no');
 };
