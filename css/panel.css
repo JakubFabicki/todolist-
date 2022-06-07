@@ -7,7 +7,7 @@
     align-items: center;
     padding-top: 10px;
 
-    position: absolute;
+    position: fixed;
     min-height: 20vh;
     min-width: 100vw;
     bottom: 0;
