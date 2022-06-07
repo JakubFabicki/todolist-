@@ -10,9 +10,13 @@ for (let i = 0; i < localStorage.length; i++) {
         
     let span = document.createElement('span');
     span.innerHTML = element;
+
+    let remove = document.createElement('div');
+    remove.classList.add('remove');
         
     item.appendChild(box);
     item.appendChild(span);
+    item.appendChild(remove);
         
     tasks.appendChild(item);
 
@@ -31,7 +35,6 @@ for (let i = 0; i < localStorage.length; i++) {
             tasks.insertBefore(box.parentElement, null);
             counter.innerHTML = 'COMPLETED (' + (completed.children.length-1) + ')';
 
-            //add to localStorage
             localStorage.setItem(span.innerHTML, 'no');
         }
         else{
@@ -39,8 +42,13 @@ for (let i = 0; i < localStorage.length; i++) {
             completed.insertBefore(box.parentElement, null);
             counter.innerHTML = 'COMPLETED (' + (completed.children.length-1) + ')';
 
-            //add to localStorage
             localStorage.setItem(span.innerHTML, 'yes');
         }
+    });
+
+    remove.addEventListener('click', ()=>{
+        item.remove();
+        localStorage.removeItem(span.innerHTML);
+        counter.innerHTML = 'COMPLETED (' + (completed.children.length-1) + ')';
     });
 }

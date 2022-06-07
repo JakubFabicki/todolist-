@@ -30,8 +30,12 @@ addBtn.addEventListener('click', ()=>{
     span.innerHTML = input.value;
     input.value = null;
     
+    let remove = document.createElement('div');
+    remove.classList.add('remove');
+        
     item.appendChild(box);
     item.appendChild(span);
+    item.appendChild(remove);
     
     tasks.appendChild(item);
     
