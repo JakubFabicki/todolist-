@@ -60,4 +60,6 @@ const addElement = (name)=>{
         localStorage.removeItem(span.innerHTML);
         counter.innerHTML = 'COMPLETED (' + (completed.children.length-1) + ')';
     });
+    
+    localStorage.setItem(name, 'no');
 };
